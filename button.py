@@ -3,6 +3,7 @@ import kivy
 from kivy.uix.button import Button
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.screenmanager import SwapTransition
+from kivy.metrics import sp
 
 
 class MakeButton(Button, ButtonBehavior):
@@ -12,10 +13,11 @@ class MakeButton(Button, ButtonBehavior):
     Attributes:
         text: A string representing the name
         motor: An integer representing the corresponding motor number
+        font_name: A string routing to desired font file
         font_size: An integer representing the font size
         screen_manager: An instance of screen manager
     """
-    def __init__(self, name, motor, screen_manager, size=30, **kwargs):
+    def __init__(self, name, motor, font_style, screen_manager, size=sp(30), **kwargs):
         """
         Function to initialize a button.
 
@@ -28,6 +30,7 @@ class MakeButton(Button, ButtonBehavior):
         super(MakeButton, self).__init__(**kwargs)
         self.status = 0
         self.text = name
+        self.font_name = font_style
         self.motor = motor
         self.font_size = size
         self.screen_manager = screen_manager
@@ -46,5 +49,5 @@ class MakeButton(Button, ButtonBehavior):
         """
         Function to switch to vending screen.
         """
-        self.screen_manager.transition = SwapTransition(duration=2)
+        self.screen_manager.transition = SwapTransition(duration=1)
         self.screen_manager.current = 'vending'
