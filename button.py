@@ -5,6 +5,7 @@ from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.screenmanager import SwapTransition
 from kivy.metrics import sp
 
+from controller import write
 
 class MakeButton(Button, ButtonBehavior):
     """
@@ -43,7 +44,7 @@ class MakeButton(Button, ButtonBehavior):
             self.status: An integer 1 or 0 representing motor activation or not.
         """
         self.status = 1
-        # write(self.motor)
+        write(self.motor)
 
     def on_release(self):
         """

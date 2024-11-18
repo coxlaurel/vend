@@ -11,8 +11,7 @@ def write(x):
     Args:
         x: An integer representing the motor number
     """
-    # arduino.write(bytes(str(x), 'utf-8'))
-    pass
+    arduino.write(bytes(str(x), 'utf-8'))
 
 
 def read():
