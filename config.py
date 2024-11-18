@@ -1,2 +1,2 @@
-PORT = '/dev/ttyACM1'
+PORT = '/dev/ttyACM0'
 BAUDRATE = 9600
