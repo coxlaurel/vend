@@ -1,0 +1,45 @@
+.content {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+header {
+    padding-top: 2em;
+}
+
+body {
+    font-family: "Montserrat", serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fbfbfd;
+}
+
+/* footer {
+    display: flex;
+    align-items: flex-end;
+} */
+
+.process_col {
+    display: flex;
+    flex-direction: column;
+}
+
+.process {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.member_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.members {
+    display: flex;
+    flex-direction: column;
+}
