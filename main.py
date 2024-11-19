@@ -13,6 +13,7 @@ import button as bt
 from config import FONT
 
 Window.size = (480,800)
+Window.fullscreen='fake'
 
 class MainScreen(GridLayout, Screen):
     """

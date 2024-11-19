@@ -36,7 +36,8 @@ class MakeButton(Button, ButtonBehavior):
         self.status = 0
         self.text = name
         self.font_style = FONT
-        self.background_color = (252/255, 163/255, 157/255, 1)
+        # self.background_color = (252/255, 163/255, 157/255, 1)
+        # self.background_normal = 
         self.motor = motor
         self.font_size = size
         self.screen_manager = screen_manager
@@ -49,7 +50,7 @@ class MakeButton(Button, ButtonBehavior):
             self.status: An integer 1 or 0 representing motor activation or not.
         """
         self.status = 1
-        # write(self.motor)
+        write(self.motor)
 
     def on_release(self):
         """
