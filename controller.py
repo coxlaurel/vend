@@ -2,7 +2,7 @@ import serial
 
 from config import PORT, BAUDRATE
 
-# arduino = serial.Serial(port=PORT, baudrate=BAUDRATE, timeout=.1)
+arduino = serial.Serial(port=PORT, baudrate=BAUDRATE, timeout=.1)
 
 def write(x):
     """
