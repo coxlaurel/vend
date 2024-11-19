@@ -1,5 +1,6 @@
 import kivy
 
+from kivy.core.window import Window
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
@@ -9,8 +10,9 @@ from kivy.metrics import sp
 
 import button as bt
 
-FONT="assets/font/Montserrat-SemiBold.ttf"
+from config import FONT
 
+Window.size = (480,800)
 
 class MainScreen(GridLayout, Screen):
     """
@@ -31,12 +33,12 @@ class MainScreen(GridLayout, Screen):
         self.cols = 2
         self.rows = 3
 
-        btn1 = bt.MakeButton("Popcorn", 1, FONT, screen_manager=screen_manager)
-        btn2 = bt.MakeButton("Chocolate", 2, FONT, screen_manager=screen_manager)
-        btn3 = bt.MakeButton("Candy", 3, FONT, screen_manager=screen_manager)
-        btn4 = bt.MakeButton("Twizzler", 4, FONT, screen_manager=screen_manager)
-        btn5 = bt.MakeButton("Mike & Ike", 5, FONT, screen_manager=screen_manager)
-        btn6 = bt.MakeButton("Tootsie Roll", 6, FONT, screen_manager=screen_manager)
+        btn1 = bt.MakeButton("Popcorn", 1, screen_manager=screen_manager)
+        btn2 = bt.MakeButton("Chocolate", 2, screen_manager=screen_manager)
+        btn3 = bt.MakeButton("Candy", 3, screen_manager=screen_manager)
+        btn4 = bt.MakeButton("Twizzler", 4, screen_manager=screen_manager)
+        btn5 = bt.MakeButton("Mike & Ike", 5, screen_manager=screen_manager)
+        btn6 = bt.MakeButton("Tootsie Roll", 6, screen_manager=screen_manager)
 
         self.add_widget(btn1)
         self.add_widget(btn2)
@@ -68,7 +70,8 @@ class VendingScreen(GridLayout, Screen):
         vend_label = Label(text='Vending...',
                            font_name=FONT,
                            font_size=sp(60),
-                           color=(1, 0, 1, 1))
+                           color=(1, 0, 1, 1)
+                           )
         self.add_widget(vend_label)
 
     def on_enter(self, *args):
