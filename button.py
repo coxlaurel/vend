@@ -17,6 +17,7 @@ class MakeButton(Button, ButtonBehavior):
         motor: An integer representing the corresponding motor number
         font_name: A string routing to desired font file
         font_size: An integer representing the font size
+        color: RGBA format for text color
         background_color:
         screen_manager: An instance of screen manager
     """
@@ -30,14 +31,13 @@ class MakeButton(Button, ButtonBehavior):
             font_style: A string routing to font file
             screen_manager: An instance of screen manager
             size: An integer representing the font size. Default = 30
-            color: A
         """
         super(MakeButton, self).__init__(**kwargs)
         self.status = 0
         self.text = name
         self.font_style = FONT
-        # self.background_color = (252/255, 163/255, 157/255, 1)
-        # self.background_normal = 
+        self.color = (0,0,0,1)
+        self.background_normal = "assets/images/film.png"
         self.motor = motor
         self.font_size = size
         self.screen_manager = screen_manager
