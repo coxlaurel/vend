@@ -13,8 +13,8 @@ import button as bt
 from config import FONT, SENSOR_THRESHOLD
 from controller import read
 
-Window.size = (480,800)
-# Window.fullscreen='auto'
+# Window.size = (480,800)
+Window.fullscreen='auto'
 
 class InsertCoinScreen(GridLayout, Screen):
     """
