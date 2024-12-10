@@ -13,8 +13,8 @@ import button as bt
 from config import FONT, SENSOR_THRESHOLD
 from controller import read
 
-Window.size = (480,800)
-# Window.fullscreen='auto'
+# Window.size = (480,800)
+Window.fullscreen='auto'
 
 class InsertCoinScreen(GridLayout, Screen):
     """
@@ -68,7 +68,7 @@ class InsertCoinScreen(GridLayout, Screen):
         """
         try:
             sensor_reading = int(read())
-            # print(f"Sensor Reading: {sensor_reading}")
+            print(f"Sensor Reading: {sensor_reading}")
             if sensor_reading < SENSOR_THRESHOLD:  # Adjust condition as needed
                 self.go_to_main()
         except ValueError as e:
