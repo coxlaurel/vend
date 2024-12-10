@@ -22,3 +22,4 @@ def read():
         A string representing the info read form serial monitor. 
     """
     line = arduino.readline().decode('utf-8').strip()
+    return line

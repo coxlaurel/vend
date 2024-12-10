@@ -33,11 +33,11 @@ class MakeButton(Button, ButtonBehavior):
             size: An integer representing the font size. Default = 30
         """
         super(MakeButton, self).__init__(**kwargs)
-        self.status = 0
         self.text = name
         self.font_style = FONT
         self.color = (0,0,0,1)
         self.background_normal = "assets/images/film.png"
+        self.background_down = "assets/images/red_bg.png"
         self.motor = motor
         self.font_size = size
         self.screen_manager = screen_manager
@@ -49,7 +49,6 @@ class MakeButton(Button, ButtonBehavior):
         Returns:
             self.status: An integer 1 or 0 representing motor activation or not.
         """
-        self.status = 1
         write(self.motor)
 
     def on_release(self):

@@ -10,10 +10,76 @@ from kivy.metrics import sp
 
 import button as bt
 
-from config import FONT
+from config import FONT, SENSOR_THRESHOLD
+from controller import read
 
-# Window.size = (480,800)
-Window.fullscreen='auto'
+Window.size = (480,800)
+# Window.fullscreen='auto'
+
+class InsertCoinScreen(GridLayout, Screen):
+    """
+    Class to create insert coin screen.
+
+    Attributes: 
+        cols: An integer representing the number of columns
+        screen_manager: An instance of screen manager
+        sensor_event: A scheduled event action
+    """
+    def __init__(self, screen_manager, **kw):
+        """
+        Initialize an instance of insert coin screen.
+
+        Args:
+            screen_manager: An instance of screen manager
+        """
+        super(InsertCoinScreen, self).__init__(**kw)
+        self.cols = 1
+        self.rows = 2
+        self.screen_manager = screen_manager
+        self.sensor_event = None
+
+        coin_label = Label(text='Please insert coin',
+                           font_name=FONT,
+                           font_size=sp(40),
+                           color=(1, 1, 1, 1),
+                           text_size=(480 * 0.8, None))
+        self.add_widget(coin_label)
+
+    def on_enter(self, *args):
+        """
+        Called when the screen becomes active.
+        Starts periodic sensor checks.
+        """
+        # Schedule sensor checks every 0.5 seconds
+        self.sensor_event = Clock.schedule_interval(self.check_sensor, 3)
+
+    def on_leave(self, *args):
+        """
+        Called when the screen is no longer active.
+        Stops periodic sensor checks.
+        """
+        # Unschedule sensor checks
+        if hasattr(self, 'sensor_event'):
+            self.sensor_event.cancel()
+
+    def check_sensor(self, *args):
+        """
+        Periodically checks sensor data to determine if a coin was inserted.
+        """
+        try:
+            sensor_reading = int(read())
+            # print(f"Sensor Reading: {sensor_reading}")
+            if sensor_reading < SENSOR_THRESHOLD:  # Adjust condition as needed
+                self.go_to_main()
+        except ValueError as e:
+            print(f"Error reading sensor: {e}")
+
+    def go_to_main(self):
+        """
+        Method to switch to the main screen.
+        """
+        self.screen_manager.current = "main"
+
 
 class MainScreen(GridLayout, Screen):
     """
@@ -71,7 +137,7 @@ class VendingScreen(GridLayout, Screen):
         vend_label = Label(text='Vending...',
                            font_name=FONT,
                            font_size=sp(60),
-                           color=(1, 0, 1, 1)
+                           color=(1, 1, 1, 1)
                            )
         self.add_widget(vend_label)
 
@@ -80,15 +146,15 @@ class VendingScreen(GridLayout, Screen):
         This method is called when the screen is displayed.
         Schedule a return to the main screen after 3 seconds.
         """
-        Clock.schedule_once(self.go_to_main, 3)
+        Clock.schedule_once(self.go_to_coin, 4)
 
-    def go_to_main(self, _):
+    def go_to_coin(self, _):
         """
-        Method to switch back to the main screen.
+        Method to switch back to the coin screen.
         """
-        self.screen_manager.current = "main"
+        self.screen_manager.current = "coin"
 
-class VendingApp(App):
+class VENDApp(App):
     """
     Class to create vending machine interface.
     """
@@ -96,6 +162,7 @@ class VendingApp(App):
         sm = ScreenManager()
 
         # Add screens to the ScreenManager
+        sm.add_widget(InsertCoinScreen(name="coin", screen_manager=sm))
         sm.add_widget(MainScreen(name='main', screen_manager=sm))
         sm.add_widget(VendingScreen(name='vending', screen_manager=sm))
 
@@ -103,4 +170,4 @@ class VendingApp(App):
 
 
 if __name__ == '__main__':
-    VendingApp().run()
+    VENDApp().run()
