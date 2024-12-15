@@ -2,7 +2,6 @@ import kivy
 
 from kivy.uix.button import Button
 from kivy.uix.behaviors import ButtonBehavior
-from kivy.uix.screenmanager import SwapTransition
 from kivy.metrics import sp
 
 from controller import write
@@ -55,5 +54,4 @@ class MakeButton(Button, ButtonBehavior):
         """
         Method to switch to vending screen.
         """
-        self.screen_manager.transition = SwapTransition(duration=1)
         self.screen_manager.current = 'vending'

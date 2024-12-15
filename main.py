@@ -13,6 +13,7 @@ import button as bt
 from config import FONT, SENSOR_THRESHOLD
 from controller import read
 
+Window.show_cursor = False
 # Window.size = (480,800)
 Window.fullscreen='auto'
 
@@ -51,7 +52,7 @@ class InsertCoinScreen(GridLayout, Screen):
         Starts periodic sensor checks.
         """
         # Schedule sensor checks every 0.5 seconds
-        self.sensor_event = Clock.schedule_interval(self.check_sensor, 3)
+        self.sensor_event = Clock.schedule_interval(self.check_sensor, 0.5)
 
     def on_leave(self, *args):
         """
@@ -70,6 +71,7 @@ class InsertCoinScreen(GridLayout, Screen):
             sensor_reading = int(read())
             print(f"Sensor Reading: {sensor_reading}")
             if sensor_reading < SENSOR_THRESHOLD:  # Adjust condition as needed
+                print("entered loop")
                 self.go_to_main()
         except ValueError as e:
             print(f"Error reading sensor: {e}")
@@ -100,12 +102,12 @@ class MainScreen(GridLayout, Screen):
         self.cols = 2
         self.rows = 3
 
-        btn1 = bt.MakeButton("Popcorn", 1, screen_manager=screen_manager)
-        btn2 = bt.MakeButton("Chocolate", 2, screen_manager=screen_manager)
-        btn3 = bt.MakeButton("Candy", 3, screen_manager=screen_manager)
-        btn4 = bt.MakeButton("Twizzler", 4, screen_manager=screen_manager)
-        btn5 = bt.MakeButton("Mike & Ike", 5, screen_manager=screen_manager)
-        btn6 = bt.MakeButton("Tootsie Roll", 6, screen_manager=screen_manager)
+        btn1 = bt.MakeButton("Oreos", 1, screen_manager=screen_manager)
+        btn2 = bt.MakeButton("Kind Bar", 2, screen_manager=screen_manager)
+        btn3 = bt.MakeButton("Shortbread Cookie", 3, screen_manager=screen_manager)
+        btn4 = bt.MakeButton("Fruit Snack", 4, screen_manager=screen_manager)
+        btn5 = bt.MakeButton("Hot Cocoa", 5, screen_manager=screen_manager)
+        btn6 = bt.MakeButton("Cheez-its", 6, screen_manager=screen_manager)
 
         self.add_widget(btn1)
         self.add_widget(btn2)
@@ -146,7 +148,7 @@ class VendingScreen(GridLayout, Screen):
         This method is called when the screen is displayed.
         Schedule a return to the main screen after 3 seconds.
         """
-        Clock.schedule_once(self.go_to_coin, 4)
+        Clock.schedule_once(self.go_to_coin, 7)
 
     def go_to_coin(self, _):
         """
