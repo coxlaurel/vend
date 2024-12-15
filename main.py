@@ -148,7 +148,7 @@ class VendingScreen(GridLayout, Screen):
         This method is called when the screen is displayed.
         Schedule a return to the main screen after 3 seconds.
         """
-        Clock.schedule_once(self.go_to_coin, 7)
+        Clock.schedule_once(self.go_to_coin, 13)
 
     def go_to_coin(self, _):
         """
