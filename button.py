@@ -37,8 +37,6 @@ class MakeButton(Button, ButtonBehavior):
         self.color = (0,0,0,1)
         # self.background_normal = "assets/images/film.png"
         # self.background_down = "assets/images/red_bg.png"
-        self.background_normal = (1,1,1,1)
-        self.background_down = (0.580, 0.110, 0.074, 1)
         self.motor = motor
         self.font_size = size
         self.screen_manager = screen_manager
@@ -50,10 +48,12 @@ class MakeButton(Button, ButtonBehavior):
         Returns:
             self.status: An integer 1 or 0 representing motor activation or not.
         """
+        self.background_color = (0.580, 0.110, 0.074, 1)
         write(self.motor)
 
     def on_release(self):
         """
         Method to switch to vending screen.
         """
+        self.background_color = (1, 1, 1, 1)
         self.screen_manager.current = 'vending'
