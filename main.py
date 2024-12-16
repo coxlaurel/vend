@@ -52,7 +52,7 @@ class InsertCoinScreen(GridLayout, Screen):
         Starts periodic sensor checks.
         """
         # Schedule sensor checks every 0.5 seconds
-        self.sensor_event = Clock.schedule_interval(self.check_sensor, 0.5)
+        self.sensor_event = Clock.schedule_interval(self.check_sensor, 0.25)
 
     def on_leave(self, *args):
         """
@@ -69,9 +69,8 @@ class InsertCoinScreen(GridLayout, Screen):
         """
         try:
             sensor_reading = int(read())
-            print(f"Sensor Reading: {sensor_reading}")
+            # print(f"Sensor Reading: {sensor_reading}")
             if sensor_reading < SENSOR_THRESHOLD:  # Adjust condition as needed
-                print("entered loop")
                 self.go_to_main()
         except ValueError as e:
             print(f"Error reading sensor: {e}")
