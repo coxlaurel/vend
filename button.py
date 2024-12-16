@@ -35,7 +35,7 @@ class MakeButton(Button, ButtonBehavior):
         self.text = name
         self.font_style = FONT
         self.color = (0,0,0,1)
-        self.background_normal = "assets/images/film.png"
+        # self.background_normal = "assets/images/film.png"
         # self.background_down = "assets/images/red_bg.png"
         # self.background_color = (1,1,1,1)
         self.motor = motor
