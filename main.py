@@ -52,7 +52,8 @@ class InsertCoinScreen(GridLayout, Screen):
         Starts periodic sensor checks.
         """
         # Schedule sensor checks every 0.5 seconds
-        self.sensor_event = Clock.schedule_interval(self.check_sensor, 0.5)
+        Clock.schedule_once(self.go_to_main, 5)
+        # self.sensor_event = Clock.schedule_interval(self.check_sensor, 0.5)
 
     def on_leave(self, *args):
         """
