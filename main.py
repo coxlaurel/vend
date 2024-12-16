@@ -104,10 +104,10 @@ class MainScreen(GridLayout, Screen):
 
         btn1 = bt.MakeButton("Oreos", 1, screen_manager=screen_manager)
         btn2 = bt.MakeButton("Kind Bar", 2, screen_manager=screen_manager)
-        btn3 = bt.MakeButton("Shortbread Cookie", 3, screen_manager=screen_manager)
+        btn3 = bt.MakeButton("Lorna Doone", 3, screen_manager=screen_manager)
         btn4 = bt.MakeButton("Fruit Snack", 4, screen_manager=screen_manager)
         btn5 = bt.MakeButton("Hot Cocoa", 5, screen_manager=screen_manager)
-        btn6 = bt.MakeButton("Cheez-its", 6, screen_manager=screen_manager)
+        btn6 = bt.MakeButton("Rice Krispies", 6, screen_manager=screen_manager)
 
         self.add_widget(btn1)
         self.add_widget(btn2)
