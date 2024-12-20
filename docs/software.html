@@ -19,6 +19,40 @@
     </header>
 
     <main>
+        <p>GitHub</p>
+        <a href="https://github.com/coxlaurel/vend-pie24">coxlaurel/vend-pie24: PIE '24 Final Project</a>
+        <h2>Interface Dependencies</h2>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Purpose</td>
+                <td>Link</td>
+            </tr>
+            <tr>
+                <td>Pyserial</td>
+                <td>serial communication</td>
+                <td><a href="https://pypi.org/project/pyserial/">https://pypi.org/project/pyserial/</a></td>
+            </tr>
+            <tr>
+                <td>Kivy</td>
+                <td>GUI library</td>
+                <td><a href="https://kivy.org/">https://kivy.org/</a></td>
+            </tr>
+        </table>
+        <h2>The Interface</h2>
+        <p>We initialized our GUI to automatically fit our touchscreen's window size and hide the cursor. Our interface had 3 interface screens: Insert coin, main vending buttons, and active vending. </p>
+        <div class="interface">
+            <img src="assets/images/coin.png">
+            <p>The first interface user’s interacted with was a screen that prompted user’s to insert a coin. Upon entering this screen, a function reads the serial monitor for a sensor value every 0.5 seconds. We calibrated our sensor to know when there’s a coin in front of it or not. If a coin is detected, the sensor value reads lower than the threshold we calibrated and cues the transition to the vending button interface.</p>
+        </div>
+        <div class="interface">
+            <img src="assets/images/vend.png">
+            <p>The vending button interface has 6 buttons for each vending slot. When a button is pressed, a number corresponding to the specific motor of the slot is sent through serial communication. This tells the Arduino to activate the motor and start LED light sequence. Additionally, the button press action cues the transition the the active vending screen. </p>
+        </div>
+        <div class="interface">
+            <img src="assets/images/vending.png">
+            <p>The last interface is the active vending screen. This screen shows the user that their request for an item went through and displays the amount of time it takes the motor to revolve once. After the display duration, the insert coin interface reappears – ready for the next user. </p>
+        </div>
     </main>
     
     <footer>

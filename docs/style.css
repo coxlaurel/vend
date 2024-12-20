@@ -14,6 +14,10 @@ h1, h2, h3 {
     line-height: 1.2;
 }
 
+h3 {
+    margin-bottom: -1px;
+}
+
 body {
     font-family: "Montserrat", serif;
     line-height: 1.5;
@@ -21,36 +25,121 @@ body {
     background-color: #fbfbfd;
 }
 
-.process_col {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
+table {
+    width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
 }
 
-.process {
+th, td, tr {
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    padding: 5px;
+}
+
+button {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    font-family: "Montserrat", serif;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+}
+
+.btn_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5%;
+    margin-bottom: -15px;
+}
+.total_cell {
+    text-align: left;
+}
+
+.process_row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.member_row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.process_row div {
+    width: 420px;
 }
 
-.members {
+.process {
     display: flex;
     flex-direction: column;
 }
 
-.container {
-    width: 300px;
-    height: 500px;
-    overflow: hidden;
+.member_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bio {
+    padding-left: 5%;
+}
+
+.member div {
+    width: 18svw; /* Fixed width for the square container */
+    height: 18svw; /* Fixed height for the square container */
+    overflow: hidden; /* Ensures content outside the container is hidden */
+    position: relative; /* Necessary for positioning the image */
+    display: flex; /* Centers the image for consistency */
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
 }
 .member img {
-    width: 300px;
+    width: 18svw;
     height: auto;
-    overflow: hidden;
+    object-fit: cover;
+    position: absolute;
+}
+
+.schematic {
+    width: 100%;
+}
+
+figcaption {
+    display: flex;
+    justify-content: center;
+    margin-top: -8%;
+}
+
+.interface{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.interface p {
+    /* padding-left: 5%; */
+    width: 450px;
+}
+
+.interface img {
+    width: 20%;
+    height: auto;
+    padding: 20px;
+}
+
+@media (max-width: 1024px) {
+    .btn_row {
+    }
+
+    .member_row {
+        display: flex;
+        flex-direction: row;
+    }
 }

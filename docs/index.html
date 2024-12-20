@@ -30,35 +30,51 @@
     <main>
         <section id="about">
         <iframe width="100%" height="500" src="https://www.youtube.com/embed/iLBz5u8dSiQ?si=OHre0P3g3Sy6x6IR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <h2>About</h2>
+        <h2>About the Machine</h2>
         <p>We created a vending machine that, when prompted by a user by inserting a coin and selecting an item, dispenses a snack. The user interacts with the system by inserting coins and pressing buttons on a touchscreen. The system interprets that signal and selects a motor to operate, spinning a coil for one rotation, dispensing an item. LEDs signal to the user that their item is being dispensed and when to retrieve it. The item falls onto a small tray, which can be accessed by sliding a door open at the bottom of the machine. When the user opens the door, the tray slides out with their snack to be easily retrieved!</p>
         </section>
         
         <section id="workings">
         <h2>How it works</h2>
-        <p>Learn more about our: <a href="electrical.html">Electrical Design</a></p>
-        <p>Learn more about our: <a href="firmware.html">Firmware Design</a></p>
-        <p>Learn more about our: <a href="software.html">Software Design</a></p>
-        <p>Learn more about our: <a href="mechanical.html">Mechanical Design</a></p>
-        <p>Nulla sit amet ante sollicitudin, pharetra enim id, pretium nisi. Etiam fermentum, massa non commodo ornare, odio nibh pellentesque diam, sed pellentesque nibh sem et enim. Aliquam in tincidunt dolor. Integer ultricies sit amet magna vitae pulvinar. Maecenas sem nulla, ultricies nec lacinia in, feugiat vel sapien. Mauris lectus neque, imperdiet nec lorem ac, fringilla ultrices neque. Sed auctor lorem risus, eu iaculis risus tristique vel. Etiam sodales tempor interdum. Vestibulum porttitor, tellus eu pulvinar consequat, justo ipsum placerat magna, eu luctus ligula dolor a ex. Nullam bibendum elit risus, in finibus felis convallis sit amet. In blandit finibus lacus, vel rhoncus augue tristique sed.</p>
+        <div class="member_row">
+            <img src="assets/images/Flow Diagram.png" width="50%">
+            <p>This is a flow diagram of our vending machine. The user interacts with the machine through a touchscreen connected to a Raspberry Pi microprocessor, which sends signals to the Arduino, which in turn operates the motors and lights through a motor shield and stepper motor driver boards. The motors rotate coils that dispense items from the machine. Once, the item falls to the bottom of the machine it lands on a tray to extrudes when the door is opened.</p>
+        </div>
+        <div class="btn_row">
+            <a href="electrical.html">
+                <button>Electrical Design</button>
+            </a>
+            <a href="firmware.html">
+                <button>Firmware Design</button>
+            </a>
+            <a href="software.html">
+                <button>Software Design</button>
+            </a>
+            <a href="mechanical.html">
+                <button>Mechanical Design</button>
+            </a>
+        </div>
         </section>
         
         <section id="process">
         <h2>Process</h2>
         <div class="process">
-            <div class="process_col">
-                <h3>Sprint 1</h3>
-                <p>In the first sprint, we constructed a sketch model made of cardboard, scrap wood, and extra resources to model how the system would interact with the items in our final product. We used motors from previous PIE projects to model the speed and power needed to operate the machine. We also sourced LEDs and prototyped code to operate them. Using our knowledge from the sketch models, we further defined our project and laid out our sprint goals. Our mechanical subteam also began designing CAD for the system.</p>
-                <a href="https://docs.google.com/presentation/d/1-L_rZTN1dIYtjbqbCikO0EBwYNGQ-aK5oOU0bOgr6vU/edit#slide=id.g3122ab47a75_1_0" target="_blank">Sprint 1 Review - Google Slides</a>
+            <div class="process_row">
+                <div>
+                    <h3>Sprint 1</h3>
+                    <p>In the first sprint, we constructed a sketch model made of cardboard, scrap wood, and extra resources to model how the system would interact with the items in our final product. We used motors from previous PIE projects to model the speed and power needed to operate the machine. We also sourced LEDs and prototyped code to operate them. Using our knowledge from the sketch models, we further defined our project and laid out our sprint goals. Our mechanical subteam also began designing CAD for the system.</p>
+                    <a href="https://docs.google.com/presentation/d/1-L_rZTN1dIYtjbqbCikO0EBwYNGQ-aK5oOU0bOgr6vU/edit#slide=id.g3122ab47a75_1_0" target="_blank">Sprint 1 Review - Google Slides</a>
+                </div>
+                <div>
+                    <h3>Sprint 2</h3>
+                    <p>In the second sprint, we integrated specific stepper motors and breakout boards in the system, giving us a higher degree of precision and control over the motor system. This required more voltage to power the system. The mechanical team began the physical design and assembly of the box to house the system, and fabrication. Additionally, they fabricated aluminum coils to be attached to the motors and utilized in the final product. The software team wrote the MVP code to operate the Arduino and Raspberry Pi together with a touchscreen.</p>
+                    <a href="https://docs.google.com/presentation/d/1YoiChuGUiAqfBZ3cJydTz4AvSEkb3GK4OPXFQZooV6s/edit#slide=id.g3122ab47a75_0_15" target="_blank">Sprint review 2 - Google Slides</a>
+                </div>
+            </div>
+            <div>
                 <h3>Sprint 3</h3>
                 <p>In the third sprint, we worked to integrate all the parts and attach them to the mechanical frame. In this sprint, we struggled with properly integrating the motors and ran into issues powering the Raspberry Pi effectively.</p>
                 <a href="https://docs.google.com/presentation/d/1GVvGBUqks4Q-J9WNaih-Lb_XElfYDbdlwQGtS4j60YM/edit#slide=id.g31d5feef937_0_15" target="_blank">Sprint 3 Review - Google Slides</a>
-            </div>
-            <div class="process_col">
-                <h3>Sprint 2</h3>
-                <p>In the second sprint, we integrated specific stepper motors and breakout boards in the system, giving us a higher degree of precision and control over the motor system. This required more voltage to power the system. The mechanical team began the physical design and assembly of the box to house the system, and fabrication. Additionally, they fabricated aluminum coils to be attached to the motors and utilized in the final product. The software team wrote the MVP code to operate the Arduino and Raspberry Pi together with a touchscreen.</p>
-                <a href="https://docs.google.com/presentation/d/1YoiChuGUiAqfBZ3cJydTz4AvSEkb3GK4OPXFQZooV6s/edit#slide=id.g3122ab47a75_0_15" target="_blank">Sprint review 2 - Google Slides</a>
-                <h3>Final Demo</h3>
             </div>
         </div>
         </section>
@@ -230,8 +246,12 @@
 
         <section id="team">
         <h2>Our Team</h2>
-        <p><a href="team.html">Meet our team here!</a></p>
-        <img src="assets/images/team/group.jpg" width="100%">
+        <div>
+            <img src="assets/images/team/group.jpg" width="350px">
+            <div >
+                <p><a href="team.html">Meet our team here!</a></p>
+            </div>
+        </div>
         </section>
     </main>
     

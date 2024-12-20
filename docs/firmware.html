@@ -21,7 +21,7 @@
     <main>
         <p>The Raspberry Pi communicates with the Arduino using the USB serial ports on both the Arduino and Raspberry Pi, with the Raspberry Pi sending serial signals when prompted by the user through the buttons, and the Arduino coded to send signals to the motors when receiving signals through the serial monitor.</p>
         <p>The Arduino program can be built from the following file:
-            <a href="https://github.com/coxlaurel/vend-pie24/blob/main/PIE_Vending_Machine_Project_Final_Arduino_Code.ino">https://github.com/coxlaurel/vend-pie24/blob/main/PIE_Vending_Machine_Project_Final_Arduino_Code.ino</a>
+            <a href="https://github.com/coxlaurel/vend-pie24/blob/main/PIE_Vending_Machine_Project_Final_Arduino_Code.ino" target="_blank">https://github.com/coxlaurel/vend-pie24/blob/main/PIE_Vending_Machine_Project_Final_Arduino_Code.ino</a>
         </p>
         <p>The Arduino is responsible for processing signals from the Raspberry Pi and relaying those signals to the stepper motors through the motor shield and breakout boards through the digital pins in the Arduino and the Arduino Motor Shield library.</p>
         <p>For the motor shield, five pins are necessary to integrate the stepper motors, with four pins controlling the speed and direction and one diverting power to ground. For the breakout boards, two digital pins are needed to connect to each stepper driver board and relay the logic signals for direction and configuring the number of steps in the stepper motor. Wiring the SLP (sleep) and RST (reset) pins together ensures that the motors are always active.</p>
