@@ -207,23 +207,6 @@ width: 200px;
     position: absolute;
 }
 
-/* .team {
-    width: 18svw; /* Fixed width for the square container */
-    height: 18svw; /* Fixed height for the square container */
-    overflow: hidden; /* Ensures content outside the container is hidden */
-    position: relative; /* Necessary for positioning the image */
-    display: flex; /* Centers the image for consistency */
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .team img {
-    width: 18svw;
-    height: auto;
-    object-fit: cover;
-    position: absolute;
-} */
-
 .schematic {
     width: 100%;
     margin-top: -20px;
