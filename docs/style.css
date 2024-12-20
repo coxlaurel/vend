@@ -153,6 +153,32 @@ width: 200px;
     flex-direction: row;
 }
 
+.mech_coil_fig img {
+    width: 30%;
+}
+
+.mech_frame_fig {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mech_frame_fig img {
+    width: 90%;
+}
+
+.mech_foot_cad img {
+    width: 40%;
+}
+
+.mech_coil_adapter_fig img {
+    width: 40%;
+}
+
+.mech_adapter_cad img {
+    width: 30%;
+}
+
 .btn_row {
     display: flex;
     flex-direction: row;
@@ -160,6 +186,7 @@ width: 200px;
     padding: 5%;
     margin-bottom: -15px;
 }
+
 .total_cell {
     text-align: left;
 }
