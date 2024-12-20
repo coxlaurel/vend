@@ -52,6 +52,107 @@ button:hover {
     color: white;
 }
 
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 150px;
+  }
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #333;
+    color: white;
+  }
+
+.mech_foot {
+position: fixed;
+top: 420px;
+width: 200px;
+}
+
+.whitespace {
+    position: fixed;
+    top: 0;
+    height: 30px;
+    padding-right: 1000px;
+    background-color: #fbfbfd;
+}
+
+.mech_head {
+    position: fixed;
+    background-color: #fbfbfd;
+    padding-right: 700px;
+    /* padding-bottom: 35px; */
+}
+
+.mech_body {
+    padding-top: 8em;
+    padding-left: 15em;
+    /* padding-right: 5em; */
+    scroll-margin-top: 400px;
+    scroll-snap-type: y mandatory;
+}
+
+.mech_front {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mech_front img {
+    width: 100%;
+}
+
+.figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.front_img {
+    width: 40%;
+}
+
+.mech_exterior_cad {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mech_exterior_cad img {
+    width: 100%;
+}
+
+.mech_exterior_cad figcaption {
+    width: 90%;
+}
+
+.mech_exterior_fig img {
+    width:50%;
+}
+
+.mech_dispenser_cad img {
+    width: 100%;
+}
+
+.dividing_cad {
+    display: flex;
+    flex-direction: row;
+}
+
 .btn_row {
     display: flex;
     flex-direction: row;
@@ -106,14 +207,50 @@ button:hover {
     position: absolute;
 }
 
+/* .team {
+    width: 18svw; /* Fixed width for the square container */
+    height: 18svw; /* Fixed height for the square container */
+    overflow: hidden; /* Ensures content outside the container is hidden */
+    position: relative; /* Necessary for positioning the image */
+    display: flex; /* Centers the image for consistency */
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .team img {
+    width: 18svw;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+} */
+
 .schematic {
+    width: 100%;
+    margin-top: -20px;
+}
+
+.schematic_caption {
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.github_block button {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
     width: 100%;
 }
 
-figcaption {
-    display: flex;
-    justify-content: center;
-    margin-top: -8%;
+.github_block button:hover {
+    background-color: #333;
+}
+
+.github_block{
+    color: #333;
+    text-decoration: none;
 }
 
 .interface{
@@ -132,6 +269,11 @@ figcaption {
     width: 20%;
     height: auto;
     padding: 20px;
+}
+
+.firmware_foot {
+    position: fixed;
+    bottom: 0px;
 }
 
 @media (max-width: 1024px) {
