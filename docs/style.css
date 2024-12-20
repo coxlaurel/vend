@@ -148,9 +148,14 @@ width: 200px;
     width: 100%;
 }
 
-.dividing_cad {
+.mech_dividing_cad {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+.mech_dividing_cad img {
+    width: 200px;
 }
 
 .mech_coil_fig img {
@@ -177,6 +182,10 @@ width: 200px;
 
 .mech_adapter_cad img {
     width: 30%;
+}
+
+.fourty img {
+    width: 40%;
 }
 
 .btn_row {
