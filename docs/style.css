@@ -93,11 +93,12 @@ width: 200px;
 .mech_head {
     position: fixed;
     background-color: #fbfbfd;
-    padding-right: 700px;
-    /* padding-bottom: 35px; */
+    padding-right: 54%;
+    z-index: 100;
 }
 
 .mech_body {
+    z-index: 0;
     padding-top: 8em;
     padding-left: 15em;
     /* padding-right: 5em; */
@@ -325,12 +326,45 @@ width: 200px;
     bottom: 0px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
+    button {
+        margin: 5px;
+    }
+
     .btn_row {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        text-align: center;
+        padding: 5%;
+        margin-bottom: -15px;
     }
 
     .member_row {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+    }
+
+    .member_row img {
+        width: 70%;
+    }
+
+    .process_row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .process_row div {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2em;
+        padding-right: 2em;
     }
 }
