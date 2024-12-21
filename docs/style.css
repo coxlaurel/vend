@@ -164,7 +164,7 @@ width: 200px;
 }
 
 .mech_dividing_cad img {
-    width: 200px;
+    width: 100%;
 }
 
 .mech_coil_fig img {
@@ -190,7 +190,7 @@ width: 200px;
 }
 
 .mech_adapter_cad img {
-    width: 30%;
+    width: 40%;
 }
 
 .fourty img {
@@ -268,7 +268,7 @@ width: 200px;
 .member div {
     width: 18svw; /* Fixed width for the square container */
     height: 18svw; /* Fixed height for the square container */
-    overflow: hidden; /* Ensures content outside the container is hidden */
+    overflow: hidden; 
     position: relative; /* Necessary for positioning the image */
     display: flex; /* Centers the image for consistency */
     justify-content: center;
@@ -276,8 +276,7 @@ width: 200px;
     background-color: #f0f0f0;
 }
 .member img {
-    width: 18svw;
-    height: auto;
+    width: 25svw;
     object-fit: cover;
     position: absolute;
 }
