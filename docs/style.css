@@ -76,6 +76,10 @@ ul {
     color: white;
   }
 
+.team img {
+    max-width: 400px;
+}
+
 .mech_foot {
 position: fixed;
 top: 420px;
@@ -94,16 +98,20 @@ width: 200px;
     position: fixed;
     background-color: #fbfbfd;
     padding-right: 54%;
-    z-index: 100;
+    z-index: 0;
 }
 
 .mech_body {
-    z-index: 0;
+    z-index: 1;
     padding-top: 8em;
     padding-left: 15em;
     /* padding-right: 5em; */
     scroll-margin-top: 400px;
     scroll-snap-type: y mandatory;
+}
+
+.mech_body section {
+    scroll-margin-top: 10em;
 }
 
 .mech_front {
